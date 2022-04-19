@@ -10,7 +10,7 @@ public class GenerateArray {
 
     public static int[] generateRandom(int size)    {
         Random randomNum = new Random();
-        IntStream stream = (IntStream) randomNum.ints(size, 0, 1000);
+        IntStream stream = (IntStream) randomNum.ints(size, 0, 10000);
         int numberArray[] = stream.toArray();
 
         return numberArray;
@@ -18,9 +18,12 @@ public class GenerateArray {
 
 
     public static void main(String[] args)  {
-        int[] randomEx = generateRandom(5);
+        int[] randomEx = generateRandom(100);
 
         System.out.println(Arrays.toString(randomEx));
+
+        ArraySorter.bubbleSort(randomEx, 100);
+        System.out.println("BUBBLE SORT" + Arrays.toString(randomEx));
     }
 
 }
