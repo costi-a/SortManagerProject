@@ -2,41 +2,44 @@ package SortManager;
 
 public class ArraySorter {
 
-    public static void bubbleSort(int[] arrayS, int size)  {
-        for (int i = 0; i < size-1; i++)
-            for (int j = 0; j < size - i - 1; ++j)
-
-                if (arrayS[j + 1] < arrayS[j]) {
-
-                    var swap = arrayS[j];
-                    arrayS[j] = arrayS[j + 1];
-                    arrayS[j + 1] = swap;
+    public static void bubbleSort(int[] arrayS) {
+        boolean sorted = false;
+        int swap;
+        while (!sorted) {
+            sorted = true;
+            for (int i = 0; i < arrayS.length - 1; i++)
+                if (arrayS[i] < arrayS[i + 1]) {
+                    swap = arrayS[i];
+                    arrayS[i] = arrayS[i + 1];
+                    arrayS[i + 1] = swap;
                 }
+
+        }
     }
 
-    public static void mergeSort(int[] arrayS, int low, int high)    {
-        if(high <= low) return;
+    public static void mergeSort(int[] arrayS, int left, int right)    {
+        if(right <= left) return;
 
-        int mid = (low + high)/2;
-        mergeSort(arrayS, low, mid);
-        mergeSort(arrayS, mid+1, high);
-        merge(arrayS, low, mid, high);
+        int mid = (left + right)/2;
+        mergeSort(arrayS, left, mid);
+        mergeSort(arrayS, mid + 1, right);
+        merge(arrayS, left, mid, right);
     }
 
-    private static void merge(int[] arrayS, int low, int mid, int high)  {
+    private static void merge(int[] arrayS, int left, int mid, int right)  {
 
-        int leftArray[] = new int[mid - low + 1];
-        int rightArray[] = new int[high - mid];
+        int leftArray[] = new int[mid - left + 1];
+        int rightArray[] = new int[right - mid];
 
         for (int i = 0; i < leftArray.length; i++)
-            leftArray[i] = arrayS[low + i];
+            leftArray[i] = arrayS[left + i];
         for (int i = 0; i < rightArray.length; i++)
             rightArray[i] = arrayS[mid + i + 1];
 
         int leftIndex = 0;
         int rightIndex = 0;
 
-        for (int i = low; i < high + 1; i++)
+        for (int i = left; i < right + 1; i++)
             if (leftIndex < leftArray.length && rightIndex < rightArray.length) {
                 if (leftArray[leftIndex] < rightArray[rightIndex]) {
                     arrayS[i] = leftArray[leftIndex];
