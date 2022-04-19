@@ -24,6 +24,9 @@ public class GenerateArray {
 
         ArraySorter.bubbleSort(randomEx, 100);
         System.out.println("BUBBLE SORT" + Arrays.toString(randomEx));
+
+        ArraySorter.mergeSort(randomEx, 0, randomEx.length - 1);
+        System.out.println("MERGE SORT" + Arrays.toString(randomEx));
     }
 
 }
