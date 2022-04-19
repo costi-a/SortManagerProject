@@ -23,7 +23,7 @@ public class ArraySorter {
         merge(arrayS, low, mid, high);
     }
 
-    public static void merge(int[] arrayS, int low, int mid, int high)  {
+    private static void merge(int[] arrayS, int low, int mid, int high)  {
 
         int leftArray[] = new int[mid - low + 1];
         int rightArray[] = new int[high - mid];

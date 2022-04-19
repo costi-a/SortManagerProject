@@ -15,18 +15,4 @@ public class GenerateArray {
 
         return numberArray;
     }
-
-
-    public static void main(String[] args)  {
-        int[] randomEx = generateRandom(100);
-
-        System.out.println(Arrays.toString(randomEx));
-
-        ArraySorter.bubbleSort(randomEx, 100);
-        System.out.println("BUBBLE SORT" + Arrays.toString(randomEx));
-
-        ArraySorter.mergeSort(randomEx, 0, randomEx.length - 1);
-        System.out.println("MERGE SORT" + Arrays.toString(randomEx));
-    }
-
 }
