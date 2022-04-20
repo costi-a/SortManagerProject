@@ -8,10 +8,11 @@ public class ArraySorter {
         while (!sorted) {
             sorted = true;
             for (int i = 0; i < arrayS.length - 1; i++)
-                if (arrayS[i] < arrayS[i + 1]) {
+                if (arrayS[i] > arrayS[i + 1]) {
                     swap = arrayS[i];
                     arrayS[i] = arrayS[i + 1];
                     arrayS[i + 1] = swap;
+                    sorted = false;
                 }
 
         }

@@ -2,8 +2,7 @@ package SortManager;
 
 import java.util.Arrays;
 import java.util.Scanner;
-
-public class SortManager {
+public class SortManager  {
 
     private static int size;
 
