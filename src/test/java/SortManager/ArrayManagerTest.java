@@ -10,16 +10,15 @@ class ArrayManagerTest {
     @BeforeEach
     void setUp() {
         System.out.println("Setting up array manager");
-        am = new ArrayManager(4);
     }
 
 
     @Test
-    void testPrintRandomArray() {
+    void testRandomArray() {
+        am = new ArrayManager(4);
         am.printRandomArray();
 
     }
 
-    private void printRandomArray() {
-    }
+
 }

@@ -1,8 +1,8 @@
-package sorters;
+package SortManager.sorters;
 
 public class MergeSort implements Sorter {
 
-    public void sort(int[] arrayS) {
+    public void sortArray() {
             mergeSort(arrayS[0], arrayS.length);
             
     }

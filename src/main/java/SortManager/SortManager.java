@@ -1,9 +1,5 @@
 package SortManager;
 
-import sorters.BubbleSort;
-import sorters.MergeSort;
-import sorters.Sorter;
-
 import java.util.Scanner;
 
 public class SortManager {
