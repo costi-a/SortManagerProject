@@ -8,46 +8,58 @@ public class MergeSort extends ArrayManager implements Sorter {
         super(arraySize);
     }
 
-
-
-    private static void mergeSort(int leftIn, int rightIn) {
-        if (rightIn <= leftIn) return;
-
-        int mid = (leftIn + rightIn) / 2;
-        mergeSort(leftIn, mid);
-        mergeSort((mid + 1), rightIn);
-        merge(leftIn, mid, rightIn);
+    public void sortArray() {
+        int[] unsortedArray = this.getGeneratedArray();
+        mergeSort(unsortedArray);
+        this.setSortedArray(unsortedArray);
+        this.printSortedArray();
     }
 
-    private static void merge(int left, int mid, int right) {
+    private static void mergeSort(int[] unsortedArray) {
+        int arraySize = unsortedArray.length;
 
-        int leftArray[] = new int[mid - left + 1];
-        int rightArray[] = new int[right - mid];
+        if (arraySize < 2)  {
+            return;
+        }
 
-        for (int i = 0; i < leftArray.length; i++)
-            leftArray[i] = leftArray[left + i];
-        for (int i = 0; i < rightArray.length; i++)
-            rightArray[i] = leftArray[mid + i + 1];
+        int midIndex = (arraySize / 2);
 
-        int leftIndex = 0;
-        int rightIndex = 0;
+        int[] leftUnsortedArray     = new int[midIndex];
+        int[] rightUnsortedArray    = new int[arraySize - midIndex];
 
-        for (int i = left; i < right + 1; i++) {
-            if (leftIndex < leftArray.length && rightIndex < rightArray.length) {
-                if (leftArray[leftIndex] < rightArray[rightIndex]) {
-                    leftArray[i] = leftArray[leftIndex];
-                    leftIndex++;
-                } else {
-                    leftArray[i] = rightArray[rightIndex];
-                    rightIndex++;
-                }
-            } else if (leftIndex < leftArray.length) {
-                leftArray[i] = leftArray[leftIndex];
-                leftIndex++;
-            } else if (rightIndex < rightArray.length) {
-                leftArray[i] = rightArray[rightIndex];
-                rightIndex++;
+        for (int i = 0; i < midIndex; i++)  {
+            leftUnsortedArray[i] = unsortedArray[i];
+        }
+        for (int i = midIndex; i < arraySize; i++)  {
+            rightUnsortedArray[i - midIndex] = unsortedArray[i];
+        }
+
+        mergeSort(leftUnsortedArray);
+        mergeSort(rightUnsortedArray);
+
+        mergeArrays(unsortedArray, leftUnsortedArray, rightUnsortedArray);
+
+    }
+
+    private static void mergeArrays(int[] mergedArray, int[] leftArray, int[] rightArray) {
+        int leftIndex     = 0;
+        int rightIndex    = 0;
+        int mergedIndex   = 0;
+
+        while (leftIndex < leftArray.length && rightIndex < rightArray.length)  {
+            if (leftArray[leftIndex] <= rightArray[rightIndex]) {
+                mergedArray[mergedIndex++] = leftArray[leftIndex++];
+            } else {
+                mergedArray[mergedIndex++] = rightArray[rightIndex++];
             }
+        }
+
+        while(leftIndex < leftArray.length) {
+            mergedArray[mergedIndex++] = leftArray[leftIndex++];
+        }
+
+        while (rightIndex < rightArray.length)  {
+            mergedArray[mergedIndex++] = rightArray[rightIndex++];
         }
     }
 }

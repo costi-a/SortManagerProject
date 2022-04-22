@@ -47,4 +47,8 @@ public class ArrayManager implements Sorter {
             }
         }
     }
+
+    public void sortArray() {
+
+    }
 }

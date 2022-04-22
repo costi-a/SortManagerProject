@@ -1,5 +1,6 @@
 package SortManager;
 
+import SortManager.sorters.MergeSort;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -10,12 +11,14 @@ class ArrayManagerTest {
     @BeforeEach
     void setUp() {
         System.out.println("Setting up array manager");
+
     }
 
 
     @Test
     void testRandomArray() {
         am = new ArrayManager(4);
+
 
 
     }
