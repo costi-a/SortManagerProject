@@ -25,6 +25,7 @@ public class BubbleSort extends ArrayManager implements Sorter  {
         }
 
         this.setSortedArray(unsortedArray);
+        this.printSortedArray();
 
     }
 

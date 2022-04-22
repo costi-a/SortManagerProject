@@ -16,7 +16,7 @@ class ArrayManagerTest {
     @Test
     void testRandomArray() {
         am = new ArrayManager(4);
-        am.printRandomArray();
+
 
     }
 

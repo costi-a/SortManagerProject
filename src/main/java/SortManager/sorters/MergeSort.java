@@ -1,11 +1,13 @@
 package SortManager.sorters;
 
-public class MergeSort implements Sorter {
+import SortManager.ArrayManager;
 
-    public void sortArray() {
-            mergeSort(arrayS[0], arrayS.length);
-            
+public class MergeSort extends ArrayManager implements Sorter {
+
+    public MergeSort(int arraySize) {
+        super(arraySize);
     }
+
 
 
     private static void mergeSort(int leftIn, int rightIn) {
