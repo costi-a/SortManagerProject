@@ -15,7 +15,7 @@ public class ArrayManager implements Sorter {
         int[] randomArray = stream.toArray();
 
         this.generatedArray = randomArray;
-        printRandomArray();
+        this.printRandomArray();
     }
 
     public int[] getGeneratedArray() {
