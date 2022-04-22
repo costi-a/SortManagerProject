@@ -1,6 +1,5 @@
 package SortManager.sorters;
 
-import SortManager.ArrayManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

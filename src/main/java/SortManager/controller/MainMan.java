@@ -1,7 +1,9 @@
-package SortManager;
+package SortManager.controller;
 
+import SortManager.sorters.SortManager;
 import SortManager.display.DisplayManager;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MainMan {
@@ -14,21 +16,17 @@ public class MainMan {
         DisplayManager.printTitle();
         DisplayManager.printSortPrompt();
 
-        try {
-            userInputS = scan.next();
-        } catch (Exception e) {
-            System.out.println("Sorry, Please Input a Valid Sorting Algorithm.");
-        }
+        userInputS = scan.next();
+
         DisplayManager.printSizePrompt();
+
         try {
             userInputN = scan.nextInt();
-        } catch (Exception e) {
-            System.out.println("Sorry, Please Input a Valid Integer.");
-        }
-        try {
             SortManager.getSorter(userInputS, userInputN);
-        } catch (Exception e) {
-            System.out.println("Sorry, An Error has Occurred.");
+        }catch (Exception e) {
+            System.out.println("Sorry, Please Try Again");
+
         }
+
     }
 }

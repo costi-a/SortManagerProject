@@ -1,4 +1,4 @@
-package SortManager;
+package SortManager.sorters;
 
 import SortManager.sorters.Sorter;
 

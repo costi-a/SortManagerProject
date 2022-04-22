@@ -1,7 +1,4 @@
-package SortManager;
-
-import SortManager.sorters.BubbleSort;
-import SortManager.sorters.MergeSort;
+package SortManager.sorters;
 
 public class SortManager {
     public static ArrayManager getSorter(String chosenSorter, int arraySize)    {

@@ -1,6 +1,6 @@
 package SortManager;
 
-import SortManager.sorters.MergeSort;
+import SortManager.sorters.ArrayManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

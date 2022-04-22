@@ -1,7 +1,5 @@
 package SortManager.display;
 
-import SortManager.ArrayManager;
-
 public abstract class DisplayManager {
 
     public static void printTitle() {

@@ -1,7 +1,5 @@
 package SortManager.sorters;
 
-import SortManager.ArrayManager;
-
 public class BubbleSort extends ArrayManager implements Sorter  {
     public BubbleSort(int arraySize) {
         super(arraySize);

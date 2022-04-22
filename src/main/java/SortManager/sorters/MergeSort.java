@@ -1,7 +1,5 @@
 package SortManager.sorters;
 
-import SortManager.ArrayManager;
-
 public class MergeSort extends ArrayManager implements Sorter {
 
     public MergeSort(int arraySize) {
