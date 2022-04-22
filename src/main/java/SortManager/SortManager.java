@@ -1,14 +1,19 @@
 package SortManager;
 
-import java.util.Scanner;
+import SortManager.sorters.BubbleSort;
+import SortManager.sorters.MergeSort;
 
 public class SortManager {
-
-
-
-
-
-    public static void main(String[] args)  {
-
+    public static ArrayManager getSorter(String chosenSorter, int arraySize)    {
+        switch(chosenSorter)    {
+            case "bubble":  {
+                return new BubbleSort(arraySize);
+            }
+            case "merge":   {
+                return new MergeSort(arraySize);
+            }
+            default:
+                return null;
+        }
     }
 }
