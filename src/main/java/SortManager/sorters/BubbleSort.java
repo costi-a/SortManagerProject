@@ -9,23 +9,27 @@ public class BubbleSort extends ArrayManager implements Sorter  {
 
     @Override
     public void sortArray() {
-        int[] unsortedArray = this.getGeneratedArray();
+        try {
+            int[] unsortedArray = this.getGeneratedArray();
 
-        int length = unsortedArray.length;
-        int tempNum;
+            int length = unsortedArray.length;
+            int tempNum;
 
-        for (int i = 0; i < length; i++)    {
-            for(int j = 1; j < (length - i); j++)   {
-                if (unsortedArray[j - 1] > unsortedArray[j])    {
-                    tempNum = unsortedArray[j - 1];
-                    unsortedArray[j - 1] = unsortedArray[j];
-                    unsortedArray[j] = tempNum;
+            for (int i = 0; i < length; i++) {
+                for (int j = 1; j < (length - i); j++) {
+                    if (unsortedArray[j - 1] > unsortedArray[j]) {
+                        tempNum = unsortedArray[j - 1];
+                        unsortedArray[j - 1] = unsortedArray[j];
+                        unsortedArray[j] = tempNum;
+                    }
                 }
             }
-        }
 
-        this.setSortedArray(unsortedArray);
-        this.printSortedArray();
+            this.setSortedArray(unsortedArray);
+            this.printSortedArray();
+        } catch (Exception e)   {
+            System.out.println("Sorry, Something went wrong.");
+        }
 
     }
 

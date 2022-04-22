@@ -9,10 +9,14 @@ public class MergeSort extends ArrayManager implements Sorter {
     }
 
     public void sortArray() {
-        int[] unsortedArray = this.getGeneratedArray();
-        mergeSort(unsortedArray);
-        this.setSortedArray(unsortedArray);
-        this.printSortedArray();
+        try{
+            int[] unsortedArray = this.getGeneratedArray();
+            mergeSort(unsortedArray);
+            this.setSortedArray(unsortedArray);
+            this.printSortedArray();
+        }catch (Exception e)    {
+            System.out.println("Sorry, Something went wrong.");
+        }
     }
 
     private static void mergeSort(int[] unsortedArray) {
