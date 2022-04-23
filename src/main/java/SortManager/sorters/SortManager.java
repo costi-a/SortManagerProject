@@ -81,14 +81,13 @@ public class SortManager {
     public static void restartSorter()  {
         DisplayManager.printRestart();
         Scanner scan = new Scanner(System.in);
-        if (Objects.equals(scan.next(), "yes")) {
+        if (Objects.equals(scan.nextLine(), "yes")) {
             DisplayManager.printTitle();
             DisplayManager.printMenu();
             SortManager.getUserInput();
-            restartSorter();
-        }
-        else if(Objects.equals(scan.next(), "no"))   {
+        } else if (Objects.equals(scan.nextLine(), "no")) {
             exitSorter();
         }
+        restartSorter();
     }
 }
