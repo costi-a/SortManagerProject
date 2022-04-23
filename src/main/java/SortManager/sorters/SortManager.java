@@ -1,5 +1,11 @@
 package SortManager.sorters;
 
+import SortManager.display.DisplayManager;
+import SortManager.sorters.binarytree.BinaryTreeSort;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public class SortManager {
     public static void getSorter(String chosenSorter, int arraySize)    {
         switch(chosenSorter)    {
@@ -15,10 +21,53 @@ public class SortManager {
             }
             case "btree" -> {
                 System.out.println("You are using Binary Tree Sort!");
+                BinaryTreeSort bts = new BinaryTreeSort(arraySize);
+                bts.sortArray();
+
             }
             default -> {
                 System.out.println("Please Choose a Sorter from the List");
             }
         }
+    }
+
+    public static void getUserInput()   {
+        Scanner scan = new Scanner(System.in);
+
+        String userInputS = "";
+        int userInputN = 0;
+
+
+        boolean suitableSortResponse = false;
+        boolean suitableSizeResponse = false;
+
+
+        while (!suitableSortResponse) {
+
+            DisplayManager.printSortPrompt();
+
+            try {
+                userInputS = scan.next();
+                if (userInputS.equals("bubble") || userInputS.equals("merge") || userInputS.equals("btree")) {
+                    suitableSortResponse = true;
+                }
+            } catch (IllegalArgumentException iae) {
+                System.out.println("Sorry Please Input a Valid Sorter");
+            }
+        }
+
+        while (!suitableSizeResponse) {
+
+            DisplayManager.printSizePrompt();
+
+            try {
+                userInputN = scan.nextInt();
+                suitableSizeResponse = true;
+            } catch (InputMismatchException | ArithmeticException e) {
+                System.out.println("Sorry Please Input a Valid Integer");
+            }
+        }
+
+        SortManager.getSorter(userInputS, userInputN);
     }
 }

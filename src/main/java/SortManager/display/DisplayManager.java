@@ -1,20 +1,18 @@
 package SortManager.display;
 
-import SortManager.sorters.ArrayManager;
-
 public abstract class DisplayManager {
 
     public static void printTitle() {
         System.out.println("\n\nSorting Manager Project\n" +
                         "-----------------------");
-        DisplayManager.printMenu();
     }
 
     public static void printMenu()  {
         System.out.println("\nList of Sort Methods: \n" +
                         "---------------------\n" +
                 "1.Bubble Sort (bubble)\n" +
-                "2.Merge Sort (merge)");
+                "2.Merge Sort (merge)\n"    +
+                "3.Binary Tree Sort (btree)");
     }
 
     public static void printSortPrompt()    {
@@ -31,7 +29,7 @@ public abstract class DisplayManager {
             arrStr.append(array[i]);
             arrStr.append(", ");
         }
-        arrStr.append(" ]");
+        arrStr.append("]");
 
         System.out.println(arrStr);
 
@@ -43,8 +41,12 @@ public abstract class DisplayManager {
     }
 
     public static void printSortedArray(int[] array)    {
-        System.out.println("Sorted Array : ");
+        System.out.println("Sorted Array: ");
         printArray(array);
+    }
+
+    public static void printRestart()   {
+        System.out.println("Would you like to try another?");
     }
 
 }
