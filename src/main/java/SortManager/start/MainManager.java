@@ -1,10 +1,10 @@
-package SortManager.controller;
+package SortManager.start;
 
 import SortManager.display.DisplayManager;
-import SortManager.sorters.SortManager;
+import SortManager.controller.SortManager;
 
 
-public class MainMan {
+public class MainManager {
     public static void main(String[] args) {
 
         DisplayManager.printTitle();

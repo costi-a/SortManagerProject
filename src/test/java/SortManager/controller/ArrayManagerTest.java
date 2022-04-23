@@ -1,6 +1,6 @@
-package SortManager;
+package SortManager.controller;
 
-import SortManager.sorters.ArrayManager;
+import SortManager.controller.ArrayManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -1,7 +1,7 @@
 package SortManager.sorters.binarytree;
 
 import SortManager.display.DisplayManager;
-import SortManager.sorters.ArrayManager;
+import SortManager.controller.ArrayManager;
 import SortManager.sorters.Sorter;
 
 public class BinaryTreeSort extends ArrayManager implements Sorter {

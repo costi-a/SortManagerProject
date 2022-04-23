@@ -1,9 +1,6 @@
 package SortManager.display;
 
-import SortManager.sorters.ArrayManager;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class DisplayManagerTest {
     private DisplayManager dm;

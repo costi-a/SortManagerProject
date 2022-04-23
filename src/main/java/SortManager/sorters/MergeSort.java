@@ -1,5 +1,6 @@
 package SortManager.sorters;
 
+import SortManager.controller.ArrayManager;
 import SortManager.display.DisplayManager;
 
 public class MergeSort extends ArrayManager implements Sorter {

@@ -1,6 +1,8 @@
-package SortManager.sorters;
+package SortManager.controller;
 
 import SortManager.display.DisplayManager;
+import SortManager.sorters.BubbleSort;
+import SortManager.sorters.MergeSort;
 import SortManager.sorters.binarytree.BinaryTreeSort;
 
 import java.util.InputMismatchException;
@@ -13,17 +15,29 @@ public class SortManager {
             case "bubble" ->  {
                 System.out.println("You are using Bubble Sort!");
                 BubbleSort bs = new BubbleSort(arraySize);
+                long startTime = System.nanoTime();
                 bs.sortArray();
+                long finishTime = System.nanoTime();
+                long duration = (finishTime - startTime);
+                System.out.println("Sort Duration: " + duration + " nanoseconds");
             }
             case "merge" ->   {
                 System.out.println("You are using Merge Sort!");
                 MergeSort ms = new MergeSort(arraySize);
+                long startTime = System.nanoTime();
                 ms.sortArray();
+                long finishTime = System.nanoTime();
+                long duration = (finishTime - startTime);
+                System.out.println("Sort Duration: " + duration + " nanoseconds");
             }
             case "btree" -> {
                 System.out.println("You are using Binary Tree Sort!");
+                long startTime = System.nanoTime();
                 BinaryTreeSort bts = new BinaryTreeSort(arraySize);
                 bts.sortArray();
+                long finishTime = System.nanoTime();
+                long duration = (finishTime - startTime);
+                System.out.println("Sort Duration: " + duration + " nanoseconds");
 
             }
             default -> {
