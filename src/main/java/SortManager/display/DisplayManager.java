@@ -46,7 +46,10 @@ public abstract class DisplayManager {
     }
 
     public static void printRestart()   {
-        System.out.println("Would you like to try another?");
+        System.out.println("Would you like to try another?\n" +
+                "Enter yes - Restart\n" +
+                "Enter no - Exit"
+        );
     }
 
 }

@@ -4,6 +4,7 @@ import SortManager.display.DisplayManager;
 import SortManager.sorters.binarytree.BinaryTreeSort;
 
 import java.util.InputMismatchException;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class SortManager {
@@ -69,5 +70,25 @@ public class SortManager {
         }
 
         SortManager.getSorter(userInputS, userInputN);
+
+    }
+
+    public static void exitSorter() {
+        System.out.println("EXITING");
+        System.exit(0);
+    }
+
+    public static void restartSorter()  {
+        DisplayManager.printRestart();
+        Scanner scan = new Scanner(System.in);
+        if (Objects.equals(scan.next(), "yes")) {
+            DisplayManager.printTitle();
+            DisplayManager.printMenu();
+            SortManager.getUserInput();
+            restartSorter();
+        }
+        else if(Objects.equals(scan.next(), "no"))   {
+            exitSorter();
+        }
     }
 }

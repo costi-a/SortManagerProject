@@ -11,5 +11,8 @@ public class MainMan {
         DisplayManager.printMenu();
 
         SortManager.getUserInput();
+
+        SortManager.restartSorter();
+
     }
 }
