@@ -1,5 +1,7 @@
 package SortManager.sorters;
 
+import SortManager.display.DisplayManager;
+
 public class BubbleSort extends ArrayManager implements Sorter  {
     public BubbleSort(int arraySize) {
         super(arraySize);
@@ -24,7 +26,7 @@ public class BubbleSort extends ArrayManager implements Sorter  {
             }
 
             this.setSortedArray(unsortedArray);
-            this.printSortedArray();
+            DisplayManager.printSortedArray(this.getSortedArray());
         } catch (Exception e)   {
             System.out.println("Sorry, Something went wrong.");
         }

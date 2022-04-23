@@ -1,5 +1,6 @@
 package SortManager.display;
 
+import SortManager.sorters.ArrayManager;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -14,6 +15,13 @@ class DisplayManagerTest {
         dm.printSortPrompt();
         dm.printSizePrompt();
 
+    }
+
+    @Test
+    void testPrintArray()   {
+        int[] testArray = {24, 34, 67, 89};
+
+        dm.printArray(testArray);
     }
 
 

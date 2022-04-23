@@ -1,5 +1,7 @@
 package SortManager.display;
 
+import SortManager.sorters.ArrayManager;
+
 public abstract class DisplayManager {
 
     public static void printTitle() {
@@ -21,6 +23,28 @@ public abstract class DisplayManager {
 
     public static void printSizePrompt()    {
         System.out.println("\nWhat size would you like the array to be?");
+    }
+
+    protected static void printArray(int[] array) {
+        StringBuilder arrStr = new StringBuilder("[ ");
+        for (int i = 0; i < array.length; i++)  {
+            arrStr.append(array[i]);
+            arrStr.append(", ");
+        }
+        arrStr.append(" ]");
+
+        System.out.println(arrStr);
+
+    }
+
+    public static void printRandomArray(int[] array)    {
+        System.out.println("Unsorted Array of Randomly Generated Numbers:   ");
+        printArray(array);
+    }
+
+    public static void printSortedArray(int[] array)    {
+        System.out.println("Sorted Array : ");
+        printArray(array);
     }
 
 }

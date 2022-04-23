@@ -1,7 +1,7 @@
 package SortManager.sorters;
 
 public class SortManager {
-    public static ArrayManager getSorter(String chosenSorter, int arraySize)    {
+    public static void getSorter(String chosenSorter, int arraySize)    {
         switch(chosenSorter)    {
             case "bubble" ->  {
                 System.out.println("You are using Bubble Sort!");
@@ -13,10 +13,12 @@ public class SortManager {
                 MergeSort ms = new MergeSort(arraySize);
                 ms.sortArray();
             }
+            case "btree" -> {
+                System.out.println("You are using Binary Tree Sort!");
+            }
             default -> {
-                return null;
+                System.out.println("Please Choose a Sorter from the List");
             }
         }
-        return null;
     }
 }

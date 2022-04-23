@@ -1,5 +1,7 @@
 package SortManager.sorters;
 
+import SortManager.display.DisplayManager;
+
 public class MergeSort extends ArrayManager implements Sorter {
 
     public MergeSort(int arraySize) {
@@ -11,7 +13,7 @@ public class MergeSort extends ArrayManager implements Sorter {
             int[] unsortedArray = this.getGeneratedArray();
             mergeSort(unsortedArray);
             this.setSortedArray(unsortedArray);
-            this.printSortedArray();
+            DisplayManager.printSortedArray(this.getSortedArray());
         }catch (Exception e)    {
             System.out.println("Sorry, Something went wrong.");
         }

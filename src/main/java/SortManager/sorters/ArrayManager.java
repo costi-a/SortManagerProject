@@ -1,5 +1,6 @@
 package SortManager.sorters;
 
+import SortManager.display.DisplayManager;
 import SortManager.sorters.Sorter;
 
 import java.util.Random;
@@ -15,7 +16,7 @@ public class ArrayManager implements Sorter {
         int[] randomArray = stream.toArray();
 
         this.generatedArray = randomArray;
-        this.printRandomArray();
+        DisplayManager.printRandomArray(this.getGeneratedArray());
     }
 
     public int[] getGeneratedArray() {
@@ -28,24 +29,6 @@ public class ArrayManager implements Sorter {
 
     public void setSortedArray(int[] sortedArray) {
         this.sortedArray = sortedArray;
-    }
-
-    public void printRandomArray() {
-        System.out.println("Unsorted Array of Randomly Generated Numbers:   ");
-        for (int index : this.getGeneratedArray()) {
-            System.out.printf("%d, ", index);
-        }
-        System.out.println(" \n ");
-
-    }
-
-    public void printSortedArray() {
-        if (this.getSortedArray() != null) {
-            System.out.println("Sorted Array : ");
-            for (int index : this.getSortedArray()) {
-                System.out.printf("%d, ", index);
-            }
-        }
     }
 
     public void sortArray() {
