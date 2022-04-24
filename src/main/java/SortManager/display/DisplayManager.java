@@ -4,11 +4,13 @@ import SortManager.controller.SortManager;
 
 public abstract class DisplayManager {
 
+    //print sort manager title
     public static void printTitle() {
         System.out.println("\n\nSorting Manager Project\n" +
                         "-----------------------");
     }
 
+    //print sort manager menu
     public static void printMenu()  {
         System.out.println("\nList of Sort Methods: \n" +
                         "---------------------\n" +
@@ -17,6 +19,7 @@ public abstract class DisplayManager {
                 "3.Binary Tree Sort (btree)");
     }
 
+    //print the prompts for user input
     public static void printSortPrompt()    {
         System.out.println("\nWhich sorting algorithm would you like to use?");
     }
@@ -25,6 +28,7 @@ public abstract class DisplayManager {
         System.out.println("\nWhat size would you like the array to be?");
     }
 
+    //print an array
     protected static void printArray(int[] array) {
         StringBuilder arrStr = new StringBuilder("[ ");
         for (int i = 0; i < array.length; i++)  {
@@ -47,6 +51,7 @@ public abstract class DisplayManager {
         printArray(array);
     }
 
+    //print restart options
     public static void printRestart()   {
         System.out.println("Would you like to try another?\n" +
                 "Enter yes - Restart\n" +
@@ -54,6 +59,7 @@ public abstract class DisplayManager {
         );
     }
 
+    //print the sort duration
     public static void printDuration()  {
         System.out.println("The Sort Duration was " + SortManager.getSortTime() + "nanoseconds");
     }

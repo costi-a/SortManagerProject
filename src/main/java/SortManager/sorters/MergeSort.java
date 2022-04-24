@@ -6,6 +6,7 @@ import SortManager.display.DisplayManager;
 
 public class MergeSort implements Sorter {
     public void sortArray() {
+        SortManager.logger.info("Calling MergeSort method");
 
         long startTime = System.nanoTime();
 
@@ -14,6 +15,7 @@ public class MergeSort implements Sorter {
             mergeSort(unsortedArray);
 
             long finishTime = System.nanoTime();
+            SortManager.logger.info("MergeSort completed successfully");
 
             ArrayManager.setSortedArray(unsortedArray);
             SortManager.setSortTime(startTime, finishTime);
@@ -36,6 +38,8 @@ public class MergeSort implements Sorter {
         int[] leftUnsortedArray     = new int[midIndex];
         int[] rightUnsortedArray    = new int[arraySize - midIndex];
 
+        //split the array into two sub-arrays
+
         for (int i = 0; i < midIndex; i++)  {
             leftUnsortedArray[i] = unsortedArray[i];
         }
@@ -51,10 +55,13 @@ public class MergeSort implements Sorter {
     }
 
     private static void mergeArrays(int[] mergedArray, int[] leftArray, int[] rightArray) {
+
+        //store the current index position of the array
         int leftIndex     = 0;
         int rightIndex    = 0;
         int mergedIndex   = 0;
 
+        //compare the sub-arrays until the end of the arrays
         while (leftIndex < leftArray.length && rightIndex < rightArray.length)  {
             if (leftArray[leftIndex] <= rightArray[rightIndex]) {
                 mergedArray[mergedIndex++] = leftArray[leftIndex++];
@@ -63,10 +70,14 @@ public class MergeSort implements Sorter {
             }
         }
 
+        //if we haven't reached the end of the leftArray,
+        // fill the merged array with the rest of the numbers
         while(leftIndex < leftArray.length) {
             mergedArray[mergedIndex++] = leftArray[leftIndex++];
         }
 
+        //if we haven't reached the end of the rightArray,
+        // fill the merged array with the rest of the numbers
         while (rightIndex < rightArray.length)  {
             mergedArray[mergedIndex++] = rightArray[rightIndex++];
         }
