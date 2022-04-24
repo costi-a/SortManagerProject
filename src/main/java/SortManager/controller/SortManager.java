@@ -120,12 +120,13 @@ public class SortManager {
         // restart the sort manager
         DisplayManager.printRestart();
         Scanner scan = new Scanner(System.in);
-        if (Objects.equals(scan.nextLine(), "yes")) {
+        if (Objects.equals(scan.next(), "yes")) {
             logger.info("user is restarting the sort manager");
             DisplayManager.printTitle();
             DisplayManager.printMenu();
             SortManager.getUserInput();
-        } else if (Objects.equals(scan.nextLine(), "no")) {
+        }
+        if (Objects.equals(scan.next(), "no")) {
             exitSorter();
         }
         restartSorter();
