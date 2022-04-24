@@ -33,6 +33,7 @@ public class BubbleSort implements Sorter  {
 
             //set sorted array and print
             ArrayManager.setSortedArray(unsortedArray);
+            System.out.println("Bubble Sorted Array: ");
             SortManager.setSortTime(startTime, finishTime);
             DisplayManager.printSortedArray(ArrayManager.getSortedArray());
         } catch (Exception e)   {

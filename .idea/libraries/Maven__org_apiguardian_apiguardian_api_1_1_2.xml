@@ -2,7 +2,6 @@
   <library name="Maven: org.apiguardian:apiguardian-api:1.1.2">
     <CLASSES>
       <root url="jar://$MAVEN_REPOSITORY$/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar!/" />
-      <root url="file://$USER_HOME$/Downloads/apache-log4j-1.2.17" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$MAVEN_REPOSITORY$/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2-javadoc.jar!/" />
@@ -23,6 +22,5 @@
       <root url="file://$USER_HOME$/Downloads/apache-log4j-1.2.17/src/performance/java" />
       <root url="file://$USER_HOME$/Downloads/apache-log4j-1.2.17/tests/src/java" />
     </SOURCES>
-    <jarDirectory url="file://$USER_HOME$/Downloads/apache-log4j-1.2.17" recursive="false" />
   </library>
 </component>

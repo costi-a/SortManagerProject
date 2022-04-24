@@ -18,6 +18,7 @@ public class MergeSort implements Sorter {
             SortManager.logger.info("MergeSort completed successfully");
 
             ArrayManager.setSortedArray(unsortedArray);
+            System.out.println("Merge Sorted Array");
             SortManager.setSortTime(startTime, finishTime);
             DisplayManager.printSortedArray(ArrayManager.getSortedArray());
 

@@ -16,7 +16,8 @@ public abstract class DisplayManager {
                         "---------------------\n" +
                 "1.Bubble Sort (bubble)\n" +
                 "2.Merge Sort (merge)\n"    +
-                "3.Binary Tree Sort (btree)");
+                "3.Binary Tree Sort (btree)\n" +
+                "4.Compare Sorts (compare)\n");
     }
 
     //print the prompts for user input
@@ -35,19 +36,20 @@ public abstract class DisplayManager {
             arrStr.append(array[i]);
             arrStr.append(", ");
         }
-        arrStr.append("]");
+        arrStr.append("]\n");
 
         System.out.println(arrStr);
 
     }
 
     public static void printRandomArray(int[] array)    {
-        System.out.println("Unsorted Array of Randomly Generated Numbers:   ");
+        System.out.println("\nUnsorted Array of Randomly Generated Numbers:   ");
         printArray(array);
     }
 
     public static void printSortedArray(int[] array)    {
-        System.out.println("Sorted Array: ");
+        System.out.println("\nSorted Array: ");
+        System.out.println("-----------------------");
         printArray(array);
     }
 
@@ -61,7 +63,8 @@ public abstract class DisplayManager {
 
     //print the sort duration
     public static void printDuration()  {
-        System.out.println("The Sort Duration was " + SortManager.getSortTime() + "nanoseconds");
+        System.out.println("-----------------------");
+        System.out.println("The Sort Duration was " + SortManager.getSortTime() + " nanoseconds");
     }
 
 }

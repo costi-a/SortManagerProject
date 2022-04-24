@@ -8,12 +8,12 @@ import SortManager.sorters.binarytree.BinaryTreeSort;
 import java.util.InputMismatchException;
 import java.util.Objects;
 import java.util.Scanner;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class SortManager {
 
-    public static Logger logger = LogManager.getLogManager().getLogger("Logger");
+    public static Logger logger = LogManager.getLogger("Logger");
 
     static long sortDuration;
 
@@ -44,12 +44,25 @@ public class SortManager {
                 BinaryTreeSort bts = new BinaryTreeSort();
                 bts.sortArray();
             }
+            case "compare" ->   {
+                //handle the sort comparisons
+                System.out.println("You are comparing Sort Algorithms");
+                logger.info("User has chosen to compare the sorters");
+                new ArrayManager(arraySize);
+                BubbleSort bs = new BubbleSort();
+                bs.sortArray();
+                MergeSort ms = new MergeSort();
+                ms.sortArray();
+                BinaryTreeSort bts = new BinaryTreeSort();
+                bts.sortArray();
+            }
             default -> {
                 System.out.println("Please Choose a Sorter from the List");
             }
         }
     }
 
+    //get the users keyboard input using scanner
     public static void getUserInput()   {
         Scanner scan = new Scanner(System.in);
 
@@ -67,7 +80,8 @@ public class SortManager {
 
             try {
                 userInputS = scan.next();
-                if (userInputS.equals("bubble") || userInputS.equals("merge") || userInputS.equals("btree")) {
+                if (userInputS.equals("bubble") || userInputS.equals("merge") ||
+                        userInputS.equals("btree") || userInputS.equals("compare")) {
                     suitableSortResponse = true;
                     logger.info("Suitable response received for sorter");
                 }
@@ -98,7 +112,7 @@ public class SortManager {
     public static void exitSorter() {
         // exit the sort manager
         System.out.println("EXITING");
-        logger.info("user is exiting the sortmanager");
+        logger.info("user is exiting the sort manager");
         System.exit(0);
     }
 
