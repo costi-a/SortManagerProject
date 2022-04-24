@@ -15,16 +15,20 @@ public class BinaryTreeSort implements Sorter {
 
         try{
             int[] unsortedArray = ArrayManager.getGeneratedArray();
-            int index = 0;
-            //create a tree root node at the start of the unsorted array
-            Tree btree = new Tree(unsortedArray[0]);
-            for (int value : unsortedArray) {
-                //insert each value of the array onto the tree
-                btree.insert(btree.getNode(), value);
-            }
+            if (unsortedArray.length > 1) {
+                int index = 0;
+                //create a tree root node at the start of the unsorted array
+                Tree btree = new Tree(unsortedArray[0]);
+                for (int value : unsortedArray) {
+                    //insert each value of the array onto the tree
+                    btree.insert(btree.getNode(), value);
+                }
 
-            //traverse the tree and sort
-            btree.traverseInOrder(btree.getNode(), unsortedArray, index);
+                //traverse the tree and sort
+                btree.traverseInOrder(btree.getNode(), unsortedArray, index);
+            }else if (unsortedArray.length < 1) {
+                ArrayManager.setSortedArray(unsortedArray);
+            }
 
             long finishTime = System.nanoTime();
 
