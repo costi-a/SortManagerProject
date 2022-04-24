@@ -1,37 +1,63 @@
 package SortManager.sorters.binarytree;
 
 public class Tree {
-    private TreeNode node;
+    static Node node;
 
     public Tree(int number) {
-        node = new TreeNode(number);
+        node = new Node(number);
     }
 
-    public TreeNode getNode()   {
+    public Node getNode() {
         return node;
     }
 
-    public void setNode(TreeNode node) {
-        this.node = node;
+    public static class Node    {
+        int value;
+        Node leftNode;
+        Node rightNode;
+        public Node(int value) {
+            this.value = value;
+            leftNode = null;
+            rightNode = null;
+        }
+        public int getValue() {
+            return value;
+        }
+
+        public void setLeftNode(Node node) {
+            this.leftNode = node;
+        }
+
+        public Node getLeftNode() {
+            return leftNode;
+        }
+
+        public void setRightNode(Node node) {
+            this.rightNode = node;
+        }
+
+        public Node getRightNode() {
+            return rightNode;
+        }
     }
 
-    public TreeNode insertNode(TreeNode node, int numberIn) {
+    public Node insert(Node node, int numberIn) {
+
         if (node == null)   {
-            return new TreeNode(numberIn);
+            return new Node(numberIn);
         }
 
-        else if (numberIn < node.getValue()) {
-            node.setLeftNode(insertNode(node.getLeftNode(), numberIn));
+        if (numberIn < node.getValue()) {
+            node.setLeftNode(insert(node.getLeftNode(), numberIn));
         }
-
-        else if (numberIn > node.getValue()) {
-            node.setRightNode(insertNode(node.getRightNode(), numberIn));
+        if (numberIn > node.getValue()) {
+            node.setRightNode(insert(node.getRightNode(), numberIn));
         }
-
         return node;
     }
 
-    public int traverseInOrder(TreeNode node, int[] array, int index)   {
+    public int traverseInOrder(Node node, int[] array, int index) {
+
         if (node.getLeftNode() != null) {
             index = traverseInOrder(node.getLeftNode(), array, index);
         }
@@ -40,11 +66,8 @@ public class Tree {
         if (node.getRightNode() != null) {
             index = traverseInOrder(node.getRightNode(), array, index);
         }
-
         return index;
     }
-
-
 }
 
 

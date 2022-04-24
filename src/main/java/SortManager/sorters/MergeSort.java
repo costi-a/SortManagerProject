@@ -3,18 +3,13 @@ package SortManager.sorters;
 import SortManager.controller.ArrayManager;
 import SortManager.display.DisplayManager;
 
-public class MergeSort extends ArrayManager implements Sorter {
-
-    public MergeSort(int arraySize) {
-        super(arraySize);
-    }
-
+public class MergeSort implements Sorter {
     public void sortArray() {
         try{
-            int[] unsortedArray = this.getGeneratedArray();
+            int[] unsortedArray = ArrayManager.getGeneratedArray();
             mergeSort(unsortedArray);
-            this.setSortedArray(unsortedArray);
-            DisplayManager.printSortedArray(this.getSortedArray());
+            ArrayManager.setSortedArray(unsortedArray);
+            DisplayManager.printSortedArray(ArrayManager.getSortedArray());
         }catch (Exception e)    {
             System.out.println("Sorry, Something went wrong.");
         }

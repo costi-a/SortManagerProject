@@ -1,4 +1,4 @@
-package SortManager.sorters;
+package SortManager.sorters.binarytree;
 
 import SortManager.controller.ArrayManager;
 import org.junit.jupiter.api.BeforeEach;
@@ -6,9 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class MergeSortTest {
-
-    private MergeSort ms = new MergeSort();
+class BinaryTreeSortTest {
 
     @BeforeEach
     void setUp() {
@@ -17,6 +15,7 @@ class MergeSortTest {
 
     @Test
     void testSortArray() {
-        ms.sortArray();
+        BinaryTreeSort bts = new BinaryTreeSort();
+        bts.sortArray();
     }
 }

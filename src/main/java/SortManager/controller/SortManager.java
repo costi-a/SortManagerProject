@@ -10,11 +10,13 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class SortManager {
+
     public static void getSorter(String chosenSorter, int arraySize)    {
         switch(chosenSorter)    {
             case "bubble" ->  {
                 System.out.println("You are using Bubble Sort!");
-                BubbleSort bs = new BubbleSort(arraySize);
+                new ArrayManager(arraySize);
+                BubbleSort bs = new BubbleSort();
                 long startTime = System.nanoTime();
                 bs.sortArray();
                 long finishTime = System.nanoTime();
@@ -23,7 +25,8 @@ public class SortManager {
             }
             case "merge" ->   {
                 System.out.println("You are using Merge Sort!");
-                MergeSort ms = new MergeSort(arraySize);
+                new ArrayManager(arraySize);
+                MergeSort ms = new MergeSort();
                 long startTime = System.nanoTime();
                 ms.sortArray();
                 long finishTime = System.nanoTime();
@@ -33,7 +36,8 @@ public class SortManager {
             case "btree" -> {
                 System.out.println("You are using Binary Tree Sort!");
                 long startTime = System.nanoTime();
-                BinaryTreeSort bts = new BinaryTreeSort(arraySize);
+                new ArrayManager(arraySize);
+                BinaryTreeSort bts = new BinaryTreeSort();
                 bts.sortArray();
                 long finishTime = System.nanoTime();
                 long duration = (finishTime - startTime);

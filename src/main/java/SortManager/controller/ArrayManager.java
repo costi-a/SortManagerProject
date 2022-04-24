@@ -7,8 +7,8 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 public class ArrayManager implements Sorter {
-    private int[] generatedArray;
-    private int[] sortedArray;
+    private static int[] generatedArray;
+    private static int[] sortedArray;
 
     public ArrayManager(int arraySize) {
         Random randomNum = new Random();
@@ -19,16 +19,16 @@ public class ArrayManager implements Sorter {
         DisplayManager.printRandomArray(this.getGeneratedArray());
     }
 
-    public int[] getGeneratedArray() {
+    public static int[] getGeneratedArray() {
         return generatedArray;
     }
 
-    public int[] getSortedArray() {
+    public static int[] getSortedArray() {
         return sortedArray;
     }
 
-    public void setSortedArray(int[] sortedArray) {
-        this.sortedArray = sortedArray;
+    public static void setSortedArray(int[] sortedArray) {
+        ArrayManager.sortedArray = sortedArray;
     }
 
     public void sortArray() {
