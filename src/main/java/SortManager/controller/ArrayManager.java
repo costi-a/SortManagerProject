@@ -19,6 +19,11 @@ public class ArrayManager implements Sorter {
         DisplayManager.printRandomArray(this.getGeneratedArray());
     }
 
+    public static int[] setArray(int[] array)  {
+        ArrayManager.generatedArray = array;
+        return array;
+    }
+
     public static int[] getGeneratedArray() {
         return generatedArray;
     }

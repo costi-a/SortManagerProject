@@ -1,5 +1,7 @@
 package SortManager.display;
 
+import SortManager.controller.SortManager;
+
 public abstract class DisplayManager {
 
     public static void printTitle() {
@@ -50,6 +52,10 @@ public abstract class DisplayManager {
                 "Enter yes - Restart\n" +
                 "Enter no - Exit"
         );
+    }
+
+    public static void printDuration()  {
+        System.out.println("The Sort Duration was " + SortManager.getSortTime() + "nanoseconds");
     }
 
 }

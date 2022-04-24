@@ -1,11 +1,14 @@
 package SortManager.sorters.binarytree;
 
+import SortManager.controller.SortManager;
 import SortManager.display.DisplayManager;
 import SortManager.controller.ArrayManager;
 import SortManager.sorters.Sorter;
 
 public class BinaryTreeSort implements Sorter {
     public void sortArray() {
+
+        long startTime = System.nanoTime();
 
 
         try{
@@ -19,8 +22,12 @@ public class BinaryTreeSort implements Sorter {
 
             btree.traverseInOrder(btree.getNode(), unsortedArray, index);
 
+            long finishTime = System.nanoTime();
+
             ArrayManager.setSortedArray(unsortedArray);
+            SortManager.setSortTime(startTime, finishTime);
             DisplayManager.printSortedArray(ArrayManager.getSortedArray());
+
         }catch (Exception e)    {
             System.out.println("Sorry, Something went wrong.");
         }

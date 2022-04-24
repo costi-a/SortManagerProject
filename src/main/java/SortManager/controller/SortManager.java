@@ -11,38 +11,28 @@ import java.util.Scanner;
 
 public class SortManager {
 
+    static long sortDuration;
+
     public static void getSorter(String chosenSorter, int arraySize)    {
         switch(chosenSorter)    {
             case "bubble" ->  {
                 System.out.println("You are using Bubble Sort!");
                 new ArrayManager(arraySize);
                 BubbleSort bs = new BubbleSort();
-                long startTime = System.nanoTime();
                 bs.sortArray();
-                long finishTime = System.nanoTime();
-                long duration = (finishTime - startTime);
-                System.out.println("Sort Duration: " + duration + " nanoseconds");
             }
             case "merge" ->   {
                 System.out.println("You are using Merge Sort!");
                 new ArrayManager(arraySize);
                 MergeSort ms = new MergeSort();
-                long startTime = System.nanoTime();
                 ms.sortArray();
-                long finishTime = System.nanoTime();
-                long duration = (finishTime - startTime);
-                System.out.println("Sort Duration: " + duration + " nanoseconds");
             }
             case "btree" -> {
                 System.out.println("You are using Binary Tree Sort!");
-                long startTime = System.nanoTime();
+
                 new ArrayManager(arraySize);
                 BinaryTreeSort bts = new BinaryTreeSort();
                 bts.sortArray();
-                long finishTime = System.nanoTime();
-                long duration = (finishTime - startTime);
-                System.out.println("Sort Duration: " + duration + " nanoseconds");
-
             }
             default -> {
                 System.out.println("Please Choose a Sorter from the List");
@@ -107,5 +97,15 @@ public class SortManager {
             exitSorter();
         }
         restartSorter();
+    }
+
+    public static void setSortTime(long startTime, long finishTime)   {
+         long duration = finishTime - startTime;
+         sortDuration = duration;
+         DisplayManager.printDuration();
+    }
+
+    public static long getSortTime()   {
+        return sortDuration;
     }
 }

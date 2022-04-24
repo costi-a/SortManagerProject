@@ -1,15 +1,24 @@
 package SortManager.sorters;
 
 import SortManager.controller.ArrayManager;
+import SortManager.controller.SortManager;
 import SortManager.display.DisplayManager;
 
 public class MergeSort implements Sorter {
     public void sortArray() {
+
+        long startTime = System.nanoTime();
+
         try{
             int[] unsortedArray = ArrayManager.getGeneratedArray();
             mergeSort(unsortedArray);
+
+            long finishTime = System.nanoTime();
+
             ArrayManager.setSortedArray(unsortedArray);
+            SortManager.setSortTime(startTime, finishTime);
             DisplayManager.printSortedArray(ArrayManager.getSortedArray());
+
         }catch (Exception e)    {
             System.out.println("Sorry, Something went wrong.");
         }
