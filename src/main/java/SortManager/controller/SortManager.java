@@ -1,9 +1,9 @@
 package SortManager.controller;
 
-import SortManager.display.DisplayManager;
-import SortManager.sorters.BubbleSort;
-import SortManager.sorters.MergeSort;
-import SortManager.sorters.binarytree.BinaryTreeSort;
+import SortManager.view.DisplayManager;
+import SortManager.model.BubbleSort;
+import SortManager.model.MergeSort;
+import SortManager.model.binarytree.BinaryTreeSort;
 
 import java.util.InputMismatchException;
 import java.util.Objects;

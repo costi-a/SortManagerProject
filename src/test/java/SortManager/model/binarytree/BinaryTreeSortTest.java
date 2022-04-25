@@ -1,8 +1,7 @@
-package SortManager.sorters.binarytree;
+package SortManager.model.binarytree;
 
 import SortManager.controller.ArrayManager;
-import SortManager.sorters.BubbleSort;
-import SortManager.sorters.Sorter;
+import SortManager.model.Sorter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

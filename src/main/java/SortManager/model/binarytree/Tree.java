@@ -1,4 +1,4 @@
-package SortManager.sorters.binarytree;
+package SortManager.model.binarytree;
 
 public class Tree {
     static Node node;

@@ -1,9 +1,9 @@
-package SortManager.sorters.binarytree;
+package SortManager.model.binarytree;
 
 import SortManager.controller.SortManager;
-import SortManager.display.DisplayManager;
+import SortManager.view.DisplayManager;
 import SortManager.controller.ArrayManager;
-import SortManager.sorters.Sorter;
+import SortManager.model.Sorter;
 
 public class BinaryTreeSort implements Sorter {
     public void sortArray() {

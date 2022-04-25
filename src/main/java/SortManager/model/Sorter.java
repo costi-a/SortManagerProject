@@ -1,4 +1,4 @@
-package SortManager.sorters;
+package SortManager.model;
 
 public interface Sorter {
     default void sortArray() {

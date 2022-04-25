@@ -1,6 +1,6 @@
 package SortManager.start;
 
-import SortManager.display.DisplayManager;
+import SortManager.view.DisplayManager;
 import SortManager.controller.SortManager;
 
 

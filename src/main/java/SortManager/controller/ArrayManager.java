@@ -1,7 +1,7 @@
 package SortManager.controller;
 
-import SortManager.display.DisplayManager;
-import SortManager.sorters.Sorter;
+import SortManager.view.DisplayManager;
+import SortManager.model.Sorter;
 
 import java.util.Random;
 import java.util.stream.IntStream;

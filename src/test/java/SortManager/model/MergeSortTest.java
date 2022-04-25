@@ -1,4 +1,4 @@
-package SortManager.sorters;
+package SortManager.model;
 
 import SortManager.controller.ArrayManager;
 import org.junit.jupiter.api.BeforeEach;

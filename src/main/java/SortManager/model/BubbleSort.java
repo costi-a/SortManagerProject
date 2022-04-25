@@ -1,8 +1,8 @@
-package SortManager.sorters;
+package SortManager.model;
 
 import SortManager.controller.ArrayManager;
 import SortManager.controller.SortManager;
-import SortManager.display.DisplayManager;
+import SortManager.view.DisplayManager;
 
 public class BubbleSort implements Sorter  {
     @Override
